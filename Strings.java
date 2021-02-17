@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.lang.String;
 import java.util.Arrays;
@@ -24,6 +25,48 @@ public class Strings{
         //string split
         String str = "Hi Hey Hello Hola";
         System.out.println(Arrays.toString(split(str)));  // ["Hi", "Hey", "Hello", "Hola"]
+
+        //converting string to char arr and vice versa
+        System.out.println(Arrays.toString(compare("Julia")));  //['j', 'u', 'l', 'i', 'a']
+        System.out.println(compare(new char[]{'R', 'u', 'b', 'y'})); // Ruby
+
+        //equality & comparison
+        System.out.println(isEqual("Hey", "hey"));  // true
+        System.out.println(lexicographicalComparison("node", "react"));  //4
+
+        //indexOf
+        System.out.println(new String("Redis").indexOf('R')); // 0
+
+        //charAt
+        System.out.println(new String("RabbitMQ").charAt(1));  // a
+    }
+
+    //equals
+    public static Boolean isEqual(String s1, String s2){
+        // s1.equals(s2) -> for identical case
+        return s1.equalsIgnoreCase(s2);
+    }
+
+    //lexicographical comparison
+    public static int lexicographicalComparison(String s1, String s2){
+        /*
+            * s1 > s2 -> val >= 1
+            * s1 < s2 -> val <= 0
+        */
+        return s1.compareTo(s2);
+    }
+
+    // str -> char arr
+    public static char[] compare(String str){
+        return str.toCharArray();
+    }
+    //method overloading char arr -> str
+    public static String compare(char[] charArray){
+        /*
+            * String.valueOf(arr)
+            * new String(arr)
+        */
+        return new String(charArray);
     }
 
     //split
@@ -82,3 +125,10 @@ public class Strings{
     }
 
 }
+
+/*
+    * string(immutable), stringBuffer(mutable), StringBuilder(mutable) uses characterSequence interface to represent sequence of characters.
+    * the reason why string was immutable  - coz, it uses string constant pool. in SCP if there's many variable have same string value only one instance
+        will be created and that reference is passed to those variables..if the string was mutable, the value would change. then, it gets effect in all variables that
+        holds that ref.
+* */
