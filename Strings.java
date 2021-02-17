@@ -1,26 +1,34 @@
 import java.util.ArrayList;
 import java.lang.String;
+import java.util.Arrays;
 
 public class Strings{
 
     public static void main(String[] args){
 
         //case : (toUpperCase, toLowerCase, Character.isUpperCase, Character.isLowerCase())
-        System.out.println(caseConversion("hey"));
-        System.out.println(caseConversion("HEY"));
-        System.out.println(caseConversion("*(&123"));
+        System.out.println(caseConversion("hey")); //Hey
+        System.out.println(caseConversion("HEY")); //hey
+        System.out.println(caseConversion("*(&123")); //Invalid String
 
         //String join - Array
         String[] arr = {"Hi", "Hello", "Hey", "Hola"};
-        System.out.println(join(arr, "."));
+        System.out.println(join(arr, ".")); //Hi.Hey.Hello.Hola
 
         //String join - ArrayList
         ArrayList<String> a = new ArrayList<String>();
         a.add("hi");
         a.add("hello");
-        System.out.println(join(a, "."));
+        System.out.println(join(a, "."));  //hi.hello
 
-        //
+        //string split
+        String str = "Hi Hey Hello Hola";
+        System.out.println(Arrays.toString(split(str)));  // ["Hi", "Hey", "Hello", "Hola"]
+    }
+
+    //split
+    public static String[] split(String str){
+        return str.split(" ", 0);
     }
 
     //join
