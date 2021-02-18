@@ -11,13 +11,8 @@ import java.util.*;
 public class SubsetOfString{
 
     public static void print(int len, String str){
-        if(len == 1)
-            System.out.println(str);
-        else {
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < len; i++)
                 System.out.println(str.substring(0, i + 1));
-            }
-        }
     }
 
     public static void main(String[] args){
