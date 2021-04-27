@@ -1,0 +1,22 @@
+package ExceptionHandling;
+
+import java.util.*;
+
+public class Main{
+	public static void main(String[] args){
+		private int x = 1;
+		private int y = 0;
+		private int[5] arr = {1, 2, 3, 4, 5};
+		try{
+			System.out.println("Successful "+ x/y);   //error
+			//System.out.println(arr[5]);    //error
+		}
+		catch(Arithmetic Exception e){
+			System.out.println(e);
+		}
+		catch(ArrayIndexOutOfBoundException e){
+			
+
+		}
+	}	
+}
