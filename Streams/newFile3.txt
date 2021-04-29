@@ -1,0 +1,31 @@
+Hi.Hey.Hello.Hola->Stream - flow of data
+->Buffer - a temporary storage for a stream of data
+->example: youtube video buffering. data will be stored in the buffer and that data will be slowly consumed.
+
+
+->In java, There are two streams
+    - Byte stream (occupies 1byte)
+        |_Input stream 
+        |_ouput_stream
+
+    - CharacterStream  (occupies 2bytes)
+        |_Reader
+        |_Writer
+
+->Byte Stream(InputStream methods) methods :
+    * read() - reads character by character
+    * read(byte[] b) - reads as a byte array based on it's size
+    * read(byte[] b, offset, length) - offset - index for a starting position, length - length to be read
+    * available() - returns an int of the length of the stream
+    * skips() - used to skip the bytes while reading
+    * mark(limit l) - only applicable for buffered streams. Mark marks a byte. reset() method is used to traverse between the current position
+    and the marked position. If the control goes beyond the limit, the mark will be destroyed
+    *  markSupported()  - Used to verify the stream is buffered
+    * close() - to close the connection.
+
+->Byte stream(OutputStream methods) methods:
+    * write() - writes character by character
+    * write(byte[] b) - writes as a byte array based on it's size
+    * write(byte[] b, offset, length) - offset - index for a starting position, length - length to be read
+    *flush() - forcing to write the data from buffer/output stream to external source
+    *close() - To close the connection
